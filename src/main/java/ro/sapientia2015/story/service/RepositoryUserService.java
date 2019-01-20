@@ -1,6 +1,7 @@
 package ro.sapientia2015.story.service;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -11,6 +12,7 @@ import ro.sapientia2015.story.exception.NotFoundException;
 import ro.sapientia2015.story.model.User;
 import ro.sapientia2015.story.repository.UserRepository;
 
+@Service
 public class RepositoryUserService implements UserService {
 
 	@Resource
