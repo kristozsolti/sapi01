@@ -5,12 +5,13 @@
 <html>
 <head>
     <title></title>
-    <script type="text/javascript" src="/static/js/user.form.js"></script>
+    <script type="text/javascript" src="/static/js/story.form.js"></script>
 </head>
 <body>
-    <h1>Add User</h1>
+    <h1>Update user</h1>
     <div class="well page-content">
-        <form:form action="/users/add" commandName="user" method="POST" enctype="utf8">
+        <form:form action="/users/update" commandName="user" method="POST" enctype="utf8">
+            <form:hidden path="id"/>
             <div id="control-group-title" class="control-group">
                 <label for="user-name">Username:</label>
 
@@ -28,8 +29,8 @@
                 </div>
             </div>
             <div class="action-buttons">
-                <a href="/" class="btn"><spring:message code="label.cancel"/></a>
-                <button id="add-user-button" type="submit" class="btn btn-primary">Add User</button>
+                <a href="/users/${user.id}" class="btn"><spring:message code="label.cancel"/></a>
+                <button id="update-story-button" type="submit" class="btn btn-primary">Update user</button>
             </div>
         </form:form>
     </div>

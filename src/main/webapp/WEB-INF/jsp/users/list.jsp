@@ -19,7 +19,7 @@
             <c:otherwise>
                 <c:forEach items="${ users}" var="user">
                     <div class="well well-small">
-                        <a href="/user/${user.id}"><c:out value="${user.name}"/></a>
+                        <a href="/users/${user.id}"><c:out value="${user.name}"/></a>
                     </div>
                 </c:forEach>
             </c:otherwise>
