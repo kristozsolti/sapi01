@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ro.sapientia2015.story.dto.UserDTO;
@@ -23,6 +24,7 @@ import ro.sapientia2015.story.model.User;
 import ro.sapientia2015.story.service.UserService;
 
 @Controller
+@SessionAttributes("user")
 public class UserController {
 	protected static final String REQUEST_MAPPING_LIST = "/users";
 	protected static final String REQUEST_MAPPING_ADD = "/users/add";
@@ -38,6 +40,7 @@ public class UserController {
     protected static final String FLASH_MESSAGE_KEY_FEEDBACK = "feedbackMessage";
 	
 	protected static final String MODEL_ATTRIBUTE = "user";
+	protected static final String MODEL_ATTRIBUTE_LIST = "users";
 	
 	protected static final String PARAMETER_ID = "id";
 
@@ -74,7 +77,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = REQUEST_MAPPING_ADD, method = RequestMethod.GET)
-	public String showUsers(Model model) {
+	public String showAddUser(Model model) {
 
 		UserDTO user = new UserDTO();
 		model.addAttribute("user", user);
